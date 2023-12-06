@@ -3,8 +3,10 @@ import styles from "./index.module.css"
 import cx from 'classnames'
 import { COLORS,MENU_ITEMS } from "@/constants"
 import { changeBrushSize, changeColor } from "@/slice/toolboxSlice";
+import { useRef } from "react";
 const Toolbox=()=>{
     const dispatch=useDispatch();
+    
     const activeMenuItem=useSelector((state)=>state.menu.activeMenuItem);
     const showStrokeToolOption=activeMenuItem===MENU_ITEMS.PENCIL;
     const showBrushToolOption=activeMenuItem===MENU_ITEMS.PENCIL|| activeMenuItem===MENU_ITEMS.ERASER;
